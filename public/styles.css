@@ -162,3 +162,10 @@ iframe {
   top: 5%;
   left: 5%;
 }
+
+/* NOT FOUND */
+.not-found-info {
+  text-align: center;
+  padding: 32px;
+  font-size: 35px;
+}
