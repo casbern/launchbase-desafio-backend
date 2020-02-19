@@ -22,6 +22,22 @@ server.get("/", function(req,res) {
   return res.render("courses", { items: courses })
 })
 
+server.get("/course/:id", function(req, res) {
+  const id = req.params.id
+  const course = courses.find(function(course) {
+    if(course.id == id) {
+      return true
+    }
+  })
+
+    if(!course) {
+      return res.send("Video was not find!")
+    }
+
+  return res.render("course", {item: course})
+  //return res.send(`O id fornecido na rota é: ${id}`);
+})
+
 server.get("/about", function(req, res) {
   const about = {
     avatar_url: "https://pbs.twimg.com/profile_images/953595371875422210/0pWsfSSp_400x400.jpg",
